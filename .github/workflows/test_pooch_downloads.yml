@@ -140,4 +140,4 @@ jobs:
           mamba list -n test_env
           echo "libraries printed"
           # mamba run -n test_env python get_data_from_zenodo.py
-          mamba run -n test_env jupyter nbconvert --execute get_data_from_zenodo.ipynb
+          mamba run -n test_env jupyter nbconvert --execute --to notebook get_data_from_zenodo.ipynb
