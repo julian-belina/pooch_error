@@ -4,7 +4,7 @@ from pooch import Unzip
 import pathlib
 
 
-root_dir = pathlib.Path(__file__).parrent
+root_dir = pathlib.Path(__file__).parent
 root_directory = root_dir.parent
 data_directory = root_directory.joinpath("geokit", "data")
 bathymetry_data_handler = pooch.create(
