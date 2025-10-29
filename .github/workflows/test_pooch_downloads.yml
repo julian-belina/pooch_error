@@ -135,9 +135,10 @@ jobs:
         run: |
           ls
           echo "LS Done"
-          mamba create -c conda-forge -c nodefaults -n test_env pooch jupyter nbconvert
+          mamba create -c conda-forge -c nodefaults -n test_env pooch jupyter nbval pytest
           echo "Installation done"
           mamba list -n test_env
           echo "libraries printed"
           # mamba run -n test_env python get_data_from_zenodo.py
-          mamba run -n test_env jupyter nbconvert --execute --to notebook get_data_from_zenodo.ipynb
+          # mamba run -n test_env jupyter nbconvert --execute --to notebook get_data_from_zenodo.ipynb
+          mamba run --name test_env python -m pytest -vv --dist loadscope --nbval-lax --nbval-current-env --nbval-cell-timeout=900000 --durations=20 get_data_from_zenodo.ipynb
