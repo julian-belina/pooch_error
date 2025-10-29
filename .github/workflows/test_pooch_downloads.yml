@@ -140,4 +140,4 @@ jobs:
           echo "libraries printed"
           # mamba run -n test_env python get_data_from_zenodo.py
           # mamba run -n test_env jupyter nbconvert --execute --to notebook get_data_from_zenodo.ipynb
-          mamba run --name test_env python -m pytest -vv --dist loadscope --nbval-lax --nbval-current-env --nbval-cell-timeout=900000 --durations=20 ./
+          mamba run --name test_env python -m pytest -vv --dist loadscope --nbval-lax --nbval-current-env --nbval-cell-timeout=900000 --durations=20 examples/
