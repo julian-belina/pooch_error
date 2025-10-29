@@ -1,5 +1,12 @@
 import pooch
 from pooch import Unzip
+
+import pathlib
+
+
+root_dir = pathlib.Path(__file__).parrent
+root_directory = root_dir.parent
+data_directory = root_directory.joinpath("geokit", "data")
 bathymetry_data_handler = pooch.create(
     path=data_directory, base_url="doi:10.5281/zenodo.17047388", registry=None, version_dev=None, retry_if_failed=5
 )
